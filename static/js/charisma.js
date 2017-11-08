@@ -43,7 +43,7 @@ $(document).ready(function () {
 
     function switchTheme(themeName) {
         if (themeName == 'classic') {
-            $('#bs-css').attr('href', 'bower_components/bootstrap/dist/css/bootstrap.min.css');
+            $('#bs-css').attr('href', '../static/bower_components/bootstrap/dist/css/bootstrap.min.css');
         } else {
             $('#bs-css').attr('href', 'static/css/bootstrap-' + themeName + '.min.css');
         }

@@ -51,7 +51,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="#">Profile</a></li>
                     <li class="divider"></li>
-                    <li><a href="login.html">Logout</a></li>
+                    <li><a href="http://localhost:5000/getlogin?logout=yes">Logout</a></li>
                 </ul>
             </div>
             <!-- user dropdown ends -->
@@ -76,26 +76,8 @@
                 </ul>
             </div>
             <ul class="collapse navbar-collapse nav navbar-nav top-menu">
-                <li><a href="#"><i class="glyphicon glyphicon-globe"></i> Visit Site</a></li>
-                <li class="dropdown">
-                    <a href="#" data-toggle="dropdown"><i class="glyphicon glyphicon-star"></i> Dropdown <span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <form class="navbar-search pull-left">
-                        <input placeholder="Search" class="search-query form-control col-md-10" name="query"
-                               type="text">
-                    </form>
-                </li>
+                
+                
             </ul>
 
         </div>
@@ -113,29 +95,22 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="index.html"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
+                        <li><a class="ajax-link" href="{{ url_for('loadindex')}}"><i class="glyphicon glyphicon-home"></i><span> Dashboard</span></a>
                         </li>
-                        <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
+                        <li><a class="ajax-link" href="{{ url_for('loadchart')}}""><i class="glyphicon glyphicon-list-alt"></i><span> Charts</span></a>
                         </li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-font"></i><span> Typography</span></a>
+                        
+                        <li><a class="ajax-link" href="{{ url_for('loadupdate')}}"><i class="glyphicon glyphicon-font"></i><span> Update expenses</span></a>
                         </li>
-                     
+                      
                         <li class="nav-header hidden-md">Sample Section</li>
-                        <li><a class="ajax-link" href="table.html"><i
-                                    class="glyphicon glyphicon-align-justify"></i><span> Tables</span></a></li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-plus"></i><span> Accordion Menu</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Child Menu 1</a></li>
-                                <li><a href="#">Child Menu 2</a></li>
-                            </ul>
+                       
+                        
+                        <li><a class="ajax-link" href="{{ url_for('loadcalendar')}}"><i class="glyphicon glyphicon-calendar"></i><span> Calendar</span></a>
                         </li>
-                        <li><a class="ajax-link" href="calendar.html"><i class="glyphicon glyphicon-calendar"></i><span> Calendar</span></a>
-                        </li>
-                        <li><a href="{{url_for('loadlogin')}}"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
+                        <li><a href="{{ url_for('loadlogin')}}"><i class="glyphicon glyphicon-lock"></i><span> Login Page</span></a>
                         </li>
                     </ul>
-                   
                 </div>
             </div>
         </div>
@@ -165,76 +140,49 @@
 </div>
 <div class=" row">
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="6 new members." class="well top-block" href="http://www.facebook.com" target="_blank">
             <i class="glyphicon glyphicon-user blue"></i>
 
             <div>Facebook</div>
-            <div>507</div>
-            <span class="notification">6</span>
+            
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="4 new pro members." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="4 new pro members." class="well top-block" href="https://www.linkedin.com/" target="_blank">
             <i class="glyphicon glyphicon-star green"></i>
 
             <div>Linked-In</div>
-            <div>228</div>
-            <span class="notification green">4</span>
+           
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="$34 new sales." class="well top-block" href="http://www.amazon.in" target="_blank">
             <i class="glyphicon glyphicon-shopping-cart yellow"></i>
 
             <div>Amazon</div>
-            <div>$13320</div>
-            <span class="notification yellow">$34</span>
+            
         </a>
     </div>
 
     <div class="col-md-3 col-sm-3 col-xs-6">
-        <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="#">
+        <a data-toggle="tooltip" title="12 new messages." class="well top-block" href="http://www.gamil.com" target="_blank">
             <i class="glyphicon glyphicon-envelope red"></i>
 
             <div>Gmail</div>
-            <div>25</div>
-            <span class="notification red">12</span>
+            
         </a>
     </div>
 </div>
 
-<div class="row">
-    <div class="box col-md-12">
-        <div class="box-inner">
-            <div class="box-header well">
-                <h2><i class="glyphicon glyphicon-info-sign"></i> Your Expense Graph</h2>
 
-                <div class="box-icon">
-                    <a href="#" class="btn btn-setting btn-round btn-default"><i
-                            class="glyphicon glyphicon-cog"></i></a>
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
-                </div>
-            </div>
-            <div class="box-content row">
-                <div class="col-lg-7 col-md-12">
-             <h1>#Expense Graph</h1>
-
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="row">
     <div class="box col-md-4">
         <div class="box-inner homepage-box">
             <div class="box-header well">
-                <h2><i class="glyphicon glyphicon-th"></i> Tabs</h2>
+                <h2><i class="glyphicon glyphicon-th"></i>Maps</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -246,32 +194,48 @@
                 </div>
             </div>
             <div class="box-content">
-                <ul class="nav nav-tabs" id="myTab">
-                    <li class="active"><a href="#info">Info</a></li>
-                    <li><a href="#custom">Traffic</a></li>
-                    <li><a href="#messages">Messages</a></li>
-                </ul>
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane active" id="info">
-                    <h3>#Maps</h3>
+                    
+                     <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Traffic layer</title>
+    <style>
+     
+      #map {
+        height: 330px;
+        width:310px;
+      }
+      
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: {lat: 13.3525 , lng: 74.7928}
+        });
 
-                    </div>
-                    <div class="tab-pane" id="custom">
-                        <h3>Custom
-                            <small>small text</small>
-                        </h3>
-                        <p>Sample paragraph.</p>
-
-                        <p>Your custom text.</p>
-                    </div>
-                    <div class="tab-pane" id="messages">
-                        <h3>Messages
-                            <small>small text</small>
-                        </h3>
-                        <p>Sample paragraph.</p>
-
-                        <p>Your custom text.</p>
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8_w2cjiuhDWleR4FvgtWsPbY4RBUOTHY&callback=initMap">
+    </script>
+  </body>
+</html>
                     </div>
                 </div>
             </div>
@@ -282,7 +246,7 @@
     <div class="box col-md-4">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-user"></i> Member Activity</h2>
+                <h2><i class="glyphicon glyphicon-user"></i>News</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -293,7 +257,153 @@
             </div>
             <div class="box-content">
                 <div class="box-content">
-                <h3>#news</h3>
+                
+                <!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>NewsApi</title>
+
+    <meta name="mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <ul class="main-menu" id="menu"></ul>
+      </nav>
+      <ul class="news" id="news"></ul>
+      <a class="copyright" href="https://newsapi.org/">newsapi.org</a>
+    </div>
+    <script>  "use strict";
+
+// application state, aka model
+const state = {
+  articles: {},
+  sources: ['the-hindu'],
+  currentSource: null
+};
+
+// in this case also could be called as app
+// manage all parts (data and their representation) of our small application
+const controller = {
+  init() {
+    state.currentSource = state.sources[0];
+    
+    this.fetchArticles()
+      .then(this.setArticles)
+      .catch() // handle error
+      .then(menuView.init.bind(menuView))
+      .then(articlesView.init.bind(articlesView));
+  },
+  
+  fetchArticles() {
+    const apiKey = '87304c4e5f9249b39a881273a2e00452';
+    const { currentSource: source } = state;
+    return fetch(`https://newsapi.org/v1/articles?source=${source}&apiKey=${apiKey}`)
+      .then((responce) => {
+        if (!responce.ok) {
+          throw new Error(responce.statusText)
+        }
+        return responce.json()
+    })
+  },
+  
+  getArticles() {
+    return state.articles
+  },
+  
+  setArticles(articles) {
+    state.articles = articles
+  },
+  
+  setCurrentSource(source) {
+    state.currentSource = source
+  },
+  
+  getCurrentSource() {
+    return state.currentSource
+  },
+  
+  getSources() {
+    return state.sources
+  }
+}
+
+// represent articles (news)
+// works only with controller
+const articlesView = {
+  init() {
+    this.$ul = document.getElementById('news');
+    
+    this.render();
+  },
+
+  formatData(publishedAt) {
+    const date = new Date(publishedAt);
+    const formatter = new Intl.DateTimeFormat("en-US",{
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    return formatter.format(date);
+  },
+
+  template(post) {
+    const li = document.createElement('li');
+
+    li.innerHTML = `
+    <p>${post.title}<p>
+    <a href=${post.url}>more</a>
+    `
+    return li;
+  },
+  
+  render() {
+    this.$ul.innerHTML = "";
+
+    controller.getArticles().articles
+      .forEach(post => this.$ul.appendChild(this.template(post)));
+  }
+}
+
+// represent menu (list of sources)
+// works only with controller
+const menuView = {
+  init() {
+    this.$ul = document.getElementById('menu');
+    this.$ul.addEventListener('click',this.handleMenuItemClick);
+
+    this.render();
+  },
+  
+  handleMenuItemClick(event){
+    controller.setCurrentSource(event.target.getAttribute('class'));
+    controller.fetchArticles()
+      .then(controller.setArticles)
+      .catch()
+      .then(articlesView.render.bind(articlesView))
+  },
+
+  render() {
+    controller.getSources().forEach(el => {
+      const li = document.createElement('li');
+      li.innerHTML = el;
+      li.setAttribute('class', el);
+      this.$ul.appendChild(li);
+    })
+  }
+}
+
+// run our application
+controller.init();</script>
+  </body>
+</html>
+
                 </div>
             </div>
         </div>
@@ -303,7 +413,7 @@
     <div class="box col-md-4">
         <div class="box-inner homepage-box">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list-alt"></i> Keep in touch</h2>
+                <h2><i class="glyphicon glyphicon-list-alt"></i>Weather</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-minimize btn-round btn-default"><i
@@ -313,9 +423,7 @@
                 </div>
             </div>
             <div class="box-content">
-                <h3>#weather</h3>
-                
-
+<!-- weather widget start --><a target="_blank" href="http://www.booked.net/weather/malpe-58146"><img width="100%" src="https://w.bookcdn.com/weather/picture/4_58146_1_1_5815e8_243_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=22857"  alt="booked.net"/></a><!-- weather widget end -->
             </div>
         </div>
     </div>
@@ -326,7 +434,7 @@
     <div class="box col-md-4">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list"></i> Buttons</h2>
+                <h2><i class="glyphicon glyphicon-list"></i>Chat</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -338,38 +446,7 @@
                 </div>
             </div>
             <div class="box-content buttons">
-                <p class="btn-group">
-                    <button class="btn btn-default">Left</button>
-                    <button class="btn btn-default">Middle</button>
-                    <button class="btn btn-default">Right</button>
-                </p>
-                <p>
-                    <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-star"></i> Icon button</button>
-                    <button class="btn btn-primary btn-sm">Small button</button>
-                    <button class="btn btn-danger btn-sm">Small button</button>
-                </p>
-                <p>
-                    <button class="btn btn-warning btn-sm">Small button</button>
-                    <button class="btn btn-success btn-sm">Small button</button>
-                    <button class="btn btn-info btn-sm">Small button</button>
-                </p>
-                <p>
-                    <button class="btn btn-inverse btn-default btn-sm">Small button</button>
-                    <button class="btn btn-primary btn-round btn-lg">Round button</button>
-                    <button class="btn btn-round btn-default btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
-                    <button class="btn btn-primary"><i class="glyphicon glyphicon-edit glyphicon-white"></i></button>
-                </p>
-                <p>
-                    <button class="btn btn-default btn-xs">Mini button</button>
-                    <button class="btn btn-primary btn-xs">Mini button</button>
-                    <button class="btn btn-danger btn-xs">Mini button</button>
-                    <button class="btn btn-warning btn-xs">Mini button</button>
-                </p>
-                <p>
-                    <button class="btn btn-info btn-xs">Mini button</button>
-                    <button class="btn btn-success btn-xs">Mini button</button>
-                    <button class="btn btn-inverse btn-default btn-xs">Mini button</button>
-                </p>
+                <iframe src="https://www.chatcrypt.com/iframe.php" width="310" height="330" frameborder="0"></iframe>
             </div>
         </div>
     </div>
@@ -378,7 +455,7 @@
     <div class="box col-md-4">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list"></i> Buttons</h2>
+                <h2><i class="glyphicon glyphicon-list"></i>Latest Email</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -390,19 +467,16 @@
                 </div>
             </div>
             <div class="box-content  buttons">
-                <h3>#email</h3>>
-                <div class="btn-group">
-                    <button class="btn btn-default btn-lg">Large Dropdown</button>
-                    <button class="btn dropdown-toggle btn-default btn-lg" data-toggle="dropdown"><span
-                            class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#"><i class="glyphicon glyphicon-star"></i> Action</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-tag"></i> Another action</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-download-alt"></i> Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-tint"></i> Separated link</a></li>
-                    </ul>
-                </div>
+                {% if session['subjects'] %}
+
+                {%   for sub in session['subjects']  %}
+
+                    {{sub}}<br><br>
+
+                {%   endfor    %}
+
+
+                {%   endif    %}
 
             </div>
         </div>
@@ -412,7 +486,7 @@
     <div class="box col-md-4">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-list"></i>#notes</h2>
+                <h2><i class="glyphicon glyphicon-list"></i>Reminder</h2>
 
                 <div class="box-icon">
                     <a href="#" class="btn btn-setting btn-round btn-default"><i
@@ -523,7 +597,6 @@
     </footer>
 
 </div><!--/.fluid-container-->
-
 <!-- external javascript -->
 
 <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
